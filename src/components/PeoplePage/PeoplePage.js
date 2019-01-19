@@ -34,7 +34,7 @@ export default class PeoplePage extends React.Component {
       <div className="row mb2">
         <div className="col-md-6">
           <ItemList 
-            onSelectedPerson={this.onSelectedPerson}
+            onItemSelected={this.onSelectedPerson}
             getData={this.swapi.getAllPeople}/>
         </div>
         <div className="col-md-6">

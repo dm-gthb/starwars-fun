@@ -36,7 +36,7 @@ export default class App extends React.Component {
         <div className="row mb2">
           <div className="col-md-6">
             <ItemList 
-              onSelectedItem={this.onSelectedItem}
+              onItemSelected={this.onSelectedItem}
               getData={this.swapi.getAllPlanets}/>
           </div>
           <div className="col-md-6">
@@ -47,7 +47,7 @@ export default class App extends React.Component {
         <div className="row mb2">
           <div className="col-md-6">
             <ItemList 
-              onSelectedItem={this.onSelectedItem}
+              onItemSelected={this.onSelectedItem}
               getData={this.swapi.getAllStarships}/>
           </div>
           <div className="col-md-6">
