@@ -10,7 +10,6 @@ export default class App extends React.Component {
   swapi = new SwapiService();
 
   render() {
-
     return (
       <ErrorBoundry>
         <div>
