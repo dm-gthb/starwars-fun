@@ -25,7 +25,7 @@ export default class ItemList extends Component {
     }
     
     const items = itemList.map((item) => {
-      const asideInfo = this.props.renderItem(item);
+      const asideInfo = this.props.children(item);
 
       return (
         <li 
