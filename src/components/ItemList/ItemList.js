@@ -2,29 +2,11 @@ import React, { Component } from 'react';
 import './ItemList.css';
 import Spinner from '../Spinner';
 
-export default class ItemList extends Component {
-
-  state = {
-    itemList: null
-  };
-
-  componentDidMount() {
-    const {getData} = this.props;
-    getData()
-      .then((itemList) => {
-        this.setState({
-          itemList
-        })
-      });
-  }
+class ItemList extends Component {
 
   render() {
-    const {itemList} = this.state;
-    if (!this.state.itemList) {
-      return <Spinner />;
-    }
-    
-    const items = itemList.map((item) => {
+    const {data} = this.props;
+    const items = data.map((item) => {
       const asideInfo = this.props.children(item);
 
       return (
@@ -42,3 +24,31 @@ export default class ItemList extends Component {
     );
   }
 }
+
+const f = () => {
+  return class extends Component {
+    state = {
+      data: null
+    };
+  
+    componentDidMount() {
+      const {getData} = this.props;
+      getData()
+        .then((data) => {
+          this.setState({
+            data
+          })
+        });
+    }
+
+    render() {
+      const {data} = this.state;
+      if (!data) {
+        return <Spinner />;
+      }
+      return <ItemList {...this.props} data={data}/>;
+    }
+  };
+};
+
+export default f();
