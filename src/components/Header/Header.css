@@ -10,10 +10,6 @@
   border-radius: 3px;
 }
 
-.header ul li:hover {
-  background-color: #444;
-}
-
 .header a:hover {
   text-decoration: none;
 }
