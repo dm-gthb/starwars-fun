@@ -15,6 +15,7 @@ const withChildFunction = (Wrapped, fn) => {
 
 const renderName = ({name}) => <span>{name}</span>;
 const renderNameAndModel = ({name, model}) => <span>{`${name} (${model})`}</span>;
+
 const mapPersonMethodsToProps = (swapi) => {
   return {
     getData: swapi.getAllPeople
@@ -42,3 +43,4 @@ export {
   PlanetList,
   StarshipList
 };
+ 

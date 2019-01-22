@@ -15,7 +15,7 @@ const withSwapiService = (Wrapped, mapMethodsToProps) => {
         }
       </SwapiConsumer>
     )
-  } 
+  }
 };
 
 export default withSwapiService;
