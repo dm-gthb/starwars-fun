@@ -26,6 +26,7 @@ export default class PeoplePage extends React.Component {
     if (this.state.hasError) {
       return <ErrorIndicator/>
     }
+    
     return (
       <Row 
         left={<PersonList onItemSelected={this.onItemSelected}/>}

@@ -1,11 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './ItemList.css';
 
 const ItemList = (props) => {
-  const {data, onItemSelected} = props;
+  const {data, onItemSelected, children} = props;
 
   const items = data.map((item) => {
-    const asideInfo = props.children(item)
+    const asideInfo = children(item)
 
     return (
       <li 
@@ -21,5 +22,15 @@ const ItemList = (props) => {
     </ul>
   );
 };
+
+ItemList.defaultProps = {
+  onItemSelected: () => {}
+}
+
+ItemList.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.object).isRequired,
+  onItemSelected: PropTypes.func,
+  children: PropTypes.func.isRequired
+}
 
 export default ItemList;
